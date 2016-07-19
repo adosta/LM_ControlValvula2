@@ -46,9 +46,9 @@
             // 
             this.btnListen.Location = new System.Drawing.Point(85, 13);
             this.btnListen.Name = "btnListen";
-            this.btnListen.Size = new System.Drawing.Size(75, 23);
+            this.btnListen.Size = new System.Drawing.Size(100, 23);
             this.btnListen.TabIndex = 0;
-            this.btnListen.Text = "Inicitar Server";
+            this.btnListen.Text = "Iniciar Server";
             this.btnListen.UseVisualStyleBackColor = true;
             this.btnListen.Click += new System.EventHandler(this.btnListen_Click_1);
             // 
