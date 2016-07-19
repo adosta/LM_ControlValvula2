@@ -13,7 +13,7 @@ using System.IO.Ports;
 
 namespace Server___Tutorial
 {
-    public partial class Form1 : Form
+    public partial class frmServer : Form
     {
         int i;
         TcpListener server = new TcpListener(IPAddress.Any, 1980); // Creates a TCP Listener To Listen to Any IPAddress trying to connect to the program with port 1980
@@ -21,7 +21,7 @@ namespace Server___Tutorial
         TcpClient client; // Creates a TCP Client
         byte[] datalength = new byte[4]; // creates a new byte with length 4 ( used for receivng data's lenght)
 
-        public Form1()
+        public frmServer()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace Server___Tutorial
 {
-    partial class Form1
+    partial class frmServer
     {
         /// <summary>
         /// Required designer variable.
@@ -120,7 +120,7 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "label1";
             // 
-            // Form1
+            // frmServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,8 +134,8 @@
             this.Controls.Add(this.txtSend);
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.btnListen);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmServer";
+            this.Text = "Servidor";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);

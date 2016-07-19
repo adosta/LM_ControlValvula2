@@ -12,14 +12,14 @@ using System.Threading;
 
 namespace Client
 {
-    public partial class Form1 : Form
+    public partial class frmControl : Form
     {
         int i;
         TcpClient client; // Creates a TCP Client
         NetworkStream stream; //Creats a NetworkStream (used for sending and receiving data)
         byte[] datalength = new byte[4]; // creates a new byte with length 4 ( used for receivng data's lenght)
 
-        public Form1()
+        public frmControl()
         {
             InitializeComponent();
         }
