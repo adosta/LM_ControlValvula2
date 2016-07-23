@@ -15,6 +15,7 @@ namespace Server___Tutorial
 {
     public partial class frmServer : Form
     {
+        string RxString;
         int i;
         TcpListener server = new TcpListener(IPAddress.Any, 1980); // Creates a TCP Listener To Listen to Any IPAddress trying to connect to the program with port 1980
         NetworkStream stream; //Creats a NetworkStream (used for sending and receiving data)
@@ -74,6 +75,12 @@ namespace Server___Tutorial
             }
         }
 
+        private void DisplayText(object sender, EventArgs e)
+        {
+            txtSend.AppendText(RxString);
+        }
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
             comboBox1.DataSource = SerialPort.GetPortNames();
@@ -111,12 +118,6 @@ namespace Server___Tutorial
         {
            serialPort1.PortName = comboBox1.Text;
            serialPort1.Open();
-
-            while (true)
-            {
-                string data_rx = serialPort1.ReadLine();
-                txtLog.Text += data_rx;
-            }
         }
 
         private void trackBar1_Scroll_1(object sender, EventArgs e)
@@ -133,6 +134,13 @@ namespace Server___Tutorial
                 byte[] b = BitConverter.GetBytes(degrees);
                 serialPort1.Write(b, 0, 4);
             }
+        }
+
+        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            RxString = serialPort1.ReadExisting();
+            this.Invoke(new EventHandler(DisplayText));
+            ServerSend(RxString);
         }
     }
 }
