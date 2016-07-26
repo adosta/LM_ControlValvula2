@@ -136,5 +136,10 @@ namespace Server___Tutorial
                 serialPort1.Write(b, 0, 4);
             }
         }
+
+        private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            
+        }
     }
 }
