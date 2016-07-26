@@ -15,6 +15,7 @@ namespace Server___Tutorial
 {
     public partial class frmServer : Form
     {
+        string RxString;
         int i;
         TcpListener server = new TcpListener(IPAddress.Any, 1980); // Creates a TCP Listener To Listen to Any IPAddress trying to connect to the program with port 1980
         NetworkStream stream; //Creats a NetworkStream (used for sending and receiving data)
@@ -32,6 +33,7 @@ namespace Server___Tutorial
             stream = client.GetStream(); //Gets The Stream of The Connection
             new Thread(() => // Thread (like Timer)
             {
+                int counter = 0;
                 while ((i = stream.Read(datalength, 0, 4)) != 0)//Keeps Trying to Receive the Size of the Message or Data
                 {
                     // how to make a byte E.X byte[] examlpe = new byte[the size of the byte here] , i used BitConverter.ToInt32(datalength,0) cuz i received the length of the data in byte called datalength :D
@@ -44,13 +46,14 @@ namespace Server___Tutorial
                         degrees = int.Parse(mensajeRecibido);
                         trackBar1.Value = degrees;
                         girarServo(degrees);
+
+                        label1.Text = counter.ToString();
                     });
+                    counter++;
                 }
             }).Start(); // Start the Thread
 
         }
-
-
 
         public void ServerSend(string msg)
         {
@@ -64,21 +67,6 @@ namespace Server___Tutorial
             stream.Write(data, 0, data.Length); //Sends the real data
         }
 
-        private void btnListen_Click(object sender, EventArgs e)
-        {
-            server.Start(); // Starts Listening to Any IPAddress trying to connect to the program with port 1980
-            MessageBox.Show("Waiting For Connection");
-            new Thread(() => // Creates a New Thread (like a timer)
-            {
-                client = server.AcceptTcpClient(); //Waits for the Client To Connect
-                MessageBox.Show("Connected To Client");
-                if (client.Connected) // If you are connected
-                {
-                    ServerReceive(); //Start Receiving
-                }
-            }).Start();
-        }
-
         private void btnSend_Click(object sender, EventArgs e)
         {
             if (client.Connected) // if the client is connected
@@ -86,6 +74,12 @@ namespace Server___Tutorial
                 ServerSend(txtSend.Text); // uses the Function ClientSend and the msg as txtSend.Text
             }
         }
+
+        private void DisplayText(object sender, EventArgs e)
+        {
+            txtSend.AppendText(RxString);
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -95,11 +89,16 @@ namespace Server___Tutorial
         private void btnListen_Click_1(object sender, EventArgs e)
         {
             server.Start(); // Starts Listening to Any IPAddress trying to connect to the program with port 1980
-            MessageBox.Show("Waiting For Connection");
+            txtLog.Text += "Waiting For Connection...\n";
             new Thread(() => // Creates a New Thread (like a timer)
             {
                 client = server.AcceptTcpClient(); //Waits for the Client To Connect
-                MessageBox.Show("Connected To Client");
+
+                this.Invoke((MethodInvoker)delegate // To Write the Received data
+                {
+                    txtLog.Text += "Connected To Client!\n";
+                });
+
                 if (client.Connected) // If you are connected
                 {
                     ServerReceive(); //Start Receiving
@@ -139,7 +138,9 @@ namespace Server___Tutorial
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            
+            RxString = serialPort1.ReadExisting();
+            this.Invoke(new EventHandler(DisplayText));
+            ServerSend(RxString);
         }
     }
 }
