@@ -44,7 +44,7 @@
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(92, 220);
+            this.btnSend.Location = new System.Drawing.Point(76, 364);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 23);
             this.btnSend.TabIndex = 8;
@@ -54,16 +54,16 @@
             // 
             // txtSend
             // 
-            this.txtSend.Location = new System.Drawing.Point(92, 193);
+            this.txtSend.Location = new System.Drawing.Point(76, 337);
             this.txtSend.Name = "txtSend";
             this.txtSend.Size = new System.Drawing.Size(100, 20);
             this.txtSend.TabIndex = 7;
             // 
             // txtLog
             // 
-            this.txtLog.Location = new System.Drawing.Point(92, 90);
+            this.txtLog.Location = new System.Drawing.Point(12, 90);
             this.txtLog.Name = "txtLog";
-            this.txtLog.Size = new System.Drawing.Size(100, 96);
+            this.txtLog.Size = new System.Drawing.Size(393, 241);
             this.txtLog.TabIndex = 6;
             this.txtLog.Text = "";
             // 
@@ -81,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(629, 389);
             this.Controls.Add(this.tbIP);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtSend);

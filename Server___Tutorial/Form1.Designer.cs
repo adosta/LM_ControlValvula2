@@ -56,20 +56,20 @@
             // 
             this.txtLog.Location = new System.Drawing.Point(85, 43);
             this.txtLog.Name = "txtLog";
-            this.txtLog.Size = new System.Drawing.Size(100, 96);
+            this.txtLog.Size = new System.Drawing.Size(321, 97);
             this.txtLog.TabIndex = 1;
             this.txtLog.Text = "";
             // 
             // txtSend
             // 
-            this.txtSend.Location = new System.Drawing.Point(85, 146);
+            this.txtSend.Location = new System.Drawing.Point(82, 143);
             this.txtSend.Name = "txtSend";
             this.txtSend.Size = new System.Drawing.Size(100, 20);
             this.txtSend.TabIndex = 2;
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(85, 182);
+            this.btnSend.Location = new System.Drawing.Point(95, 169);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 23);
             this.btnSend.TabIndex = 3;
@@ -80,14 +80,14 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(248, 14);
+            this.comboBox1.Location = new System.Drawing.Point(540, 15);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 4;
             // 
             // btnConectar
             // 
-            this.btnConectar.Location = new System.Drawing.Point(304, 56);
+            this.btnConectar.Location = new System.Drawing.Point(596, 57);
             this.btnConectar.Name = "btnConectar";
             this.btnConectar.Size = new System.Drawing.Size(75, 23);
             this.btnConectar.TabIndex = 5;
@@ -101,14 +101,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(515, 119);
+            this.textBox1.Location = new System.Drawing.Point(807, 120);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 7;
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(248, 146);
+            this.trackBar1.Location = new System.Drawing.Point(540, 147);
             this.trackBar1.Maximum = 180;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(384, 45);
@@ -118,7 +118,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(580, 103);
+            this.label1.Location = new System.Drawing.Point(872, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 8;
@@ -128,7 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 276);
+            this.ClientSize = new System.Drawing.Size(930, 215);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.trackBar1);

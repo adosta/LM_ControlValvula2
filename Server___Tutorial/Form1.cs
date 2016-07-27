@@ -77,7 +77,7 @@ namespace Server___Tutorial
 
         private void DisplayText(object sender, EventArgs e)
         {
-            txtSend.AppendText(RxString);
+            txtLog.AppendText(RxString);
         }
 
 
@@ -138,8 +138,10 @@ namespace Server___Tutorial
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            RxString = serialPort1.ReadExisting();
+            RxString = serialPort1.ReadExisting()+"\n";
+
             this.Invoke(new EventHandler(DisplayText));
+            //txtLog.Text = RxString;
             ServerSend(RxString);
         }
     }
