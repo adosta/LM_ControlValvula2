@@ -90,6 +90,9 @@ namespace Server___Tutorial
         {
             server.Start(); // Starts Listening to Any IPAddress trying to connect to the program with port 1980
             txtLog.Text += "Waiting For Connection...\n";
+
+            tbName.Text = Dns.GetHostName();
+
             new Thread(() => // Creates a New Thread (like a timer)
             {
                 client = server.AcceptTcpClient(); //Waits for the Client To Connect
@@ -143,6 +146,11 @@ namespace Server___Tutorial
             this.Invoke(new EventHandler(DisplayText));
             //txtLog.Text = RxString;
             ServerSend(RxString);
+        }
+        
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
