@@ -39,6 +39,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
+            this.tbName = new System.Windows.Forms.TextBox();
+            this.tbIP = new System.Windows.Forms.TextBox();
+            this.lblIP = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblUltGPM = new System.Windows.Forms.Label();
+            this.lblGPM = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +60,7 @@
             // 
             // txtLog
             // 
-            this.txtLog.Location = new System.Drawing.Point(85, 43);
+            this.txtLog.Location = new System.Drawing.Point(85, 120);
             this.txtLog.Name = "txtLog";
             this.txtLog.Size = new System.Drawing.Size(321, 97);
             this.txtLog.TabIndex = 1;
@@ -62,14 +68,14 @@
             // 
             // txtSend
             // 
-            this.txtSend.Location = new System.Drawing.Point(82, 143);
+            this.txtSend.Location = new System.Drawing.Point(85, 222);
             this.txtSend.Name = "txtSend";
             this.txtSend.Size = new System.Drawing.Size(100, 20);
             this.txtSend.TabIndex = 2;
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(95, 169);
+            this.btnSend.Location = new System.Drawing.Point(85, 248);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(75, 23);
             this.btnSend.TabIndex = 3;
@@ -80,14 +86,14 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(540, 15);
+            this.comboBox1.Location = new System.Drawing.Point(85, 291);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 4;
             // 
             // btnConectar
             // 
-            this.btnConectar.Location = new System.Drawing.Point(596, 57);
+            this.btnConectar.Location = new System.Drawing.Point(141, 333);
             this.btnConectar.Name = "btnConectar";
             this.btnConectar.Size = new System.Drawing.Size(75, 23);
             this.btnConectar.TabIndex = 5;
@@ -123,12 +129,69 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // tbName
+            // 
+            this.tbName.Location = new System.Drawing.Point(112, 42);
+            this.tbName.Name = "tbName";
+            this.tbName.Size = new System.Drawing.Size(175, 20);
+            this.tbName.TabIndex = 9;
+            // 
+            // tbIP
+            // 
+            this.tbIP.Location = new System.Drawing.Point(112, 68);
+            this.tbIP.Name = "tbIP";
+            this.tbIP.Size = new System.Drawing.Size(100, 20);
+            this.tbIP.TabIndex = 10;
+            // 
+            // lblIP
+            // 
+            this.lblIP.AutoSize = true;
+            this.lblIP.Location = new System.Drawing.Point(86, 71);
+            this.lblIP.Name = "lblIP";
+            this.lblIP.Size = new System.Drawing.Size(20, 13);
+            this.lblIP.TabIndex = 11;
+            this.lblIP.Text = "IP:";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(2, 45);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(104, 13);
+            this.lblNombre.TabIndex = 12;
+            this.lblNombre.Text = "Nombre del servidor:";
+            // 
+            // lblUltGPM
+            // 
+            this.lblUltGPM.AutoSize = true;
+            this.lblUltGPM.Location = new System.Drawing.Point(12, 225);
+            this.lblUltGPM.Name = "lblUltGPM";
+            this.lblUltGPM.Size = new System.Drawing.Size(63, 13);
+            this.lblUltGPM.TabIndex = 13;
+            this.lblUltGPM.Text = "Ultimo GPM";
+            // 
+            // lblGPM
+            // 
+            this.lblGPM.AutoSize = true;
+            this.lblGPM.Location = new System.Drawing.Point(31, 167);
+            this.lblGPM.Name = "lblGPM";
+            this.lblGPM.Size = new System.Drawing.Size(34, 13);
+            this.lblGPM.TabIndex = 14;
+            this.lblGPM.Text = "GPM:";
             // 
             // frmServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 215);
+            this.ClientSize = new System.Drawing.Size(930, 409);
+            this.Controls.Add(this.lblGPM);
+            this.Controls.Add(this.lblUltGPM);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.lblIP);
+            this.Controls.Add(this.tbIP);
+            this.Controls.Add(this.tbName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.trackBar1);
@@ -139,7 +202,7 @@
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.btnListen);
             this.Name = "frmServer";
-            this.Text = "Servidor";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
@@ -159,6 +222,12 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.TextBox tbIP;
+        private System.Windows.Forms.Label lblIP;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblUltGPM;
+        private System.Windows.Forms.Label lblGPM;
     }
 }
 

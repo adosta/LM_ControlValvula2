@@ -37,7 +37,7 @@ namespace Client
                     stream.Read(data, 0, data.Length); //Receives The Real Data not the Size
                     this.Invoke((MethodInvoker)delegate // To Write the Received data
                     {
-                        txtLog.Text += System.Environment.NewLine + "Server : " + Encoding.Default.GetString(data); // Encoding.Default.GetString(data); Converts Bytes Received to String
+                        txtLog.Text = System.Environment.NewLine + "Server : " + Encoding.Default.GetString(data); // Encoding.Default.GetString(data); Converts Bytes Received to String
                     });
                 }
             }).Start(); // Start the Thread
@@ -80,6 +80,12 @@ namespace Client
             {
                 ClientSend(txtSend.Text); // uses the Function ClientSend and the msg as txtSend.Text
             }
+        }
+
+
+        private void tbIP_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
