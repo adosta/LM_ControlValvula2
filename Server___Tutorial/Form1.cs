@@ -142,7 +142,7 @@ namespace Server___Tutorial
 
             this.Invoke(new EventHandler(DisplayText));
             //txtLog.Text = RxString;
-            ServerSend(RxString);
+            //ServerSend(RxString);
         }
     }
 }
